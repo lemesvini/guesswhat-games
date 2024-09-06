@@ -201,7 +201,7 @@ export default function WORD() {
       >
         GO BACK
       </div>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white font-mono p-4">
+      <div className="flex flex-col items-center justify-center h-[100dvh] bg-black text-white font-mono p-4">
         <h1 className="font-mono text-green-400 text-2xl mb-4">
           Guess the Word!
         </h1>

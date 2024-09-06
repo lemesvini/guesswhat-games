@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <>
-      <motion.div className="flex flex-col h-screen w-full justify-center items-center">
+      <motion.div className="flex flex-col h-[100dvh] w-full justify-center items-center">
         <motion.div className="pb-12">
           {letters.map((letter, index) => (
             <motion.span
