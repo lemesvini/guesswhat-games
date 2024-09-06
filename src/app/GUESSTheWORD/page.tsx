@@ -3,16 +3,106 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const wordList = [
-  "barn", "keep", "land", "fist", "bake", "mild", "fish", "sand", "moon", "cave",
-  "wind", "time", "turn", "rain", "fire", "leaf", "star", "cold", "wall", "belt",
-  "face", "milk", "hand", "luck", "gift", "dark", "wolf", "snow", "rock", "game",
-  "walk", "blue", "tree", "foot", "gold", "salt", "ship", "road", "farm", "bird",
-  "deep", "door", "seed", "tool", "path", "clay", "crow", "wave", "head", "wolf",
-  "grow", "note", "fork", "plan", "drop", "flow", "ring", "moon", "skin", "flag",
-  "slow", "ride", "lake", "glow", "band", "fear", "coat", "roof", "king", "hill",
-  "boot", "iron", "lamp", "wave", "jump", "pick", "sink", "lock", "pack", "coin",
-  "rush", "ball", "mark", "bell", "cook", "shop", "card", "wave", "play", "roll",
-  "sail", "book", "kick", "chip", "post", "bike", "dust", "horn", "farm", "palm"
+  "BARN",
+  "KEEP",
+  "LAND",
+  "FIST",
+  "BAKE",
+  "MILD",
+  "FISH",
+  "SAND",
+  "MOON",
+  "CAVE",
+  "WIND",
+  "TIME",
+  "TURN",
+  "RAIN",
+  "FIRE",
+  "LEAF",
+  "STAR",
+  "COLD",
+  "WALL",
+  "BELT",
+  "FACE",
+  "MILK",
+  "HAND",
+  "LUCK",
+  "GIFT",
+  "DARK",
+  "WOLF",
+  "SNOW",
+  "ROCK",
+  "GAME",
+  "WALK",
+  "BLUE",
+  "TREE",
+  "FOOT",
+  "GOLD",
+  "SALT",
+  "SHIP",
+  "ROAD",
+  "FARM",
+  "BIRD",
+  "DEEP",
+  "DOOR",
+  "SEED",
+  "TOOL",
+  "PATH",
+  "CLAY",
+  "CROW",
+  "WAVE",
+  "HEAD",
+  "WOLF",
+  "GROW",
+  "NOTE",
+  "FORK",
+  "PLAN",
+  "DROP",
+  "FLOW",
+  "RING",
+  "MOON",
+  "SKIN",
+  "FLAG",
+  "SLOW",
+  "RIDE",
+  "LAKE",
+  "GLOW",
+  "BAND",
+  "FEAR",
+  "COAT",
+  "ROOF",
+  "KING",
+  "HILL",
+  "BOOT",
+  "IRON",
+  "LAMP",
+  "WAVE",
+  "JUMP",
+  "PICK",
+  "SINK",
+  "LOCK",
+  "PACK",
+  "COIN",
+  "RUSH",
+  "BALL",
+  "MARK",
+  "BELL",
+  "COOK",
+  "SHOP",
+  "CARD",
+  "WAVE",
+  "PLAY",
+  "ROLL",
+  "SAIL",
+  "BOOK",
+  "KICK",
+  "CHIP",
+  "POST",
+  "BIKE",
+  "DUST",
+  "HORN",
+  "FARM",
+  "PALM",
 ];
 
 function getBackgroundColorClass(correctCount: number) {
@@ -91,7 +181,7 @@ export default function WORD() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       checkWord();
       inputRefs.current[0]?.focus();
@@ -99,12 +189,18 @@ export default function WORD() {
   };
 
   useEffect(() => {
-    generateWord(); 
+    generateWord();
   }, []);
+
 
   return (
     <>
-      <div onClick={goBack} className="absolute tablet:p-24 p-12 font-mono hover:underline cursor-pointer">GO BACK</div>
+      <div
+        onClick={goBack}
+        className="absolute tablet:p-24 p-12 font-mono hover:underline cursor-pointer"
+      >
+        GO BACK
+      </div>
       <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white font-mono p-4">
         <h1 className="font-mono text-green-400 text-2xl mb-4">
           Guess the Word!
@@ -162,8 +258,19 @@ export default function WORD() {
               }}
               className="w-16 h-16 bg-black text-white border-2 border-white rounded-lg text-center text-2xl focus:outline-none"
               maxLength={1}
+              type="text"
+              pattern="[a-z]"
               value={inputValues[index]}
-              onChange={(e) => handleChangeText(e.target.value, index)}
+              onChange={(e) =>
+                handleChangeText(
+                  (e.target as HTMLInputElement).value.toLowerCase(),
+                  index
+                )
+              }
+              onInput={(e) => {
+                const inputElement = e.target as HTMLInputElement;
+                inputElement.value = inputElement.value.toLowerCase();
+              }}
               onKeyDown={(e) => handleKeyDown(e)}
             />
           ))}
