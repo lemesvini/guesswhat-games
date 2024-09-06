@@ -91,7 +91,7 @@ export default function Home() {
               fontWeight: "900",
             }}
           >
-            <span>
+            <span className="text-white">
               {gameTitle1} -
               <i className="font-normal font-mono">{game1Label}</i>
             </span>
@@ -114,7 +114,7 @@ export default function Home() {
               fontWeight: "900",
             }}
           >
-            <span>
+            <span className="text-white">
               {gameTitle2} -
               <i className="font-normal font-mono">{game2Label}</i>
             </span>
