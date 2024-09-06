@@ -54,19 +54,21 @@ export default function Home() {
         >
           <motion.div
             onClick={goToGame1}
-            className="w-96 py-3 flex flex-row border px-3 bg-transparent font-black"
+            className="w-80 py-3 flex flex-row justify-between border px-3 bg-transparent font-black"
             transition={{duration: 0, ease: "linear"}}
             whileHover={{ backgroundColor: "#e6f0e9", x: 1, y: 1, color: "black", cursor: "pointer", border: "1", borderColor: "white", fontWeight: "900" }}
           >
-              <span>GAME 1 - <i className="font-normal font-mono">CRACK THE CODE</i></span>
+              <span >GAME 1 - <i className="font-normal font-mono">CRACK THE CODE</i> </span>
+              <span className="text-gray-800">{"["} 1 - 9 {"]"}</span>
           </motion.div>
           <motion.div
             onClick={goToGame2}
-            className="w-96 py-3 border px-3 bg-transparent font-black"
+            className="w-80 py-3 flex flex-row justify-between border px-3 bg-transparent font-black"
             transition={{duration: 0, ease: "linear"}}
             whileHover={{ backgroundColor: "#e6f0e9", x: 1, y: 1, color: "black", cursor: "pointer", border: "1", borderColor: "white", fontWeight: "900" }}
           >
             <span>GAME 2 - <i className="font-normal font-mono">GUESS THE WORD</i></span>
+            <span className="text-gray-800">{"["} a - z {"]"}</span>
           </motion.div>          
         </motion.div>
       </motion.div>
