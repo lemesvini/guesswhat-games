@@ -156,7 +156,7 @@ export default function Index() {
               className="w-16 h-16 bg-black text-white border-2 border-white rounded-lg text-center text-2xl focus:outline-none"
               maxLength={1}
               value={inputValues[index]}
-              type="number"
+              
               onChange={(e) => handleChangeText(e.target.value, index)}
               onKeyDown={(e) => handleKeyDown(e)}
             />
