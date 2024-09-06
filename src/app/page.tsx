@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <>
-      <motion.div className="flex flex-col h-[100dvh] w-full justify-center items-center">
+      <motion.div className="flex flex-col h-[100dvh] w-full justify-center items-center bg-[#0A0A0A]">
         <motion.div className="pb-12" key={lang}>
           {letters.map((letter, index) => (
             <motion.span
