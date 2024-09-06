@@ -236,7 +236,7 @@ export default function PALAVRA() {
               correctCount
             )}`}
           >
-            Letra corretas: {correctCount}
+            letras corretas: {correctCount}
           </p>
         </div>
 
